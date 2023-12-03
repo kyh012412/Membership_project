@@ -10,4 +10,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="cart_insert" parameterType="int">
 		insert into cart_detail values(#{m_idx}, #{i_idx}, 1)
 	</insert>
+<<<<<<< Updated upstream
+=======
+	
+	<!-- 장바구니 전체 조회 -->
+	<select id="cart_select_list" resultMap="cart_list">
+		SELECT * FROM item i, CART_DETAIL cd WHERE i.I_IDX = cd.I_IDX and m_idx=#{m_idx}
+	</select>
+	
+	
+>>>>>>> Stashed changes
 </mapper>

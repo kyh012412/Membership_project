@@ -11,6 +11,37 @@
 			#shopping_cart_item{background-color: skyblue;}
 			#buttonbar{background-color: pink;}
 		</style>
+<<<<<<< Updated upstream
+=======
+		<script>
+			function select_all(select_all)  {
+				const checkboxes = document.getElementsByName('item_checkbox');
+				  
+				checkboxes.forEach((checkbox) => {
+				checkbox.checked = select_all.checked;
+				})
+			}
+			
+			function select_option_fn(f){
+				const i_name = f.i_name.value.trim();
+				const url = "select_option";
+				
+				const param = {
+					"i_name": encodeURIComponent(i_name),
+				};
+					
+				sendRequest(url, param, resultFn, "post");
+			}
+			
+			function resultFn(...args){
+				let res = args[0].param;
+
+				if(res != null){
+					alert(res)
+				} 
+			}
+		</script>
+>>>>>>> Stashed changes
 	</head>
 	<body>
 		<input type="checkbox">

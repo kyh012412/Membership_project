@@ -72,6 +72,20 @@ public class ShopController {
 		
 		// idx로 해당 상품 정보 가져와서 바인딩
 		
+<<<<<<< Updated upstream
+=======
+	@RequestMapping("shopping_cart")
+	public String shopping_cart(Model model) {
+		
+		HttpSession session = request.getSession();
+		PMemberVO p_member_vo = (PMemberVO) session.getAttribute("id");
+		int m_idx = p_member_vo.getM_idx();
+		
+		// 장바구니 테이블을 전체 조회해서 바인딩
+		List<CartDetailVO> list = cart_detail_dao.cart_select_list(m_idx);
+				
+		model.addAttribute("list", list);
+>>>>>>> Stashed changes
 		
 		if(cart > 0) {
 			return Path.ShopPath.make_path("shopping_cart");
@@ -149,4 +163,29 @@ public class ShopController {
 		
 		return Path.ShopPath.make_path("shop_item");
 	}
+<<<<<<< Updated upstream
 }
+=======
+	
+	@RequestMapping("select_option")
+	@ResponseBody
+	public List<String> select_option (Model model, @RequestBody String body) throws UnsupportedEncodingException{
+		ObjectMapper om = new ObjectMapper();
+			
+		Map<String, String> data = null;
+		
+		try {
+			data = om.readValue(body, new TypeReference<Map<String, String>>() {
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String i_name = URLDecoder.decode(data.get("i_name"), "utf-8");
+		
+		List<String> colors = item_dao.item_select_color(i_name);		
+		
+		return colors;
+	}
+}
+>>>>>>> Stashed changes

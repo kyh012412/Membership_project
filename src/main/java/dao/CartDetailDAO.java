@@ -15,4 +15,11 @@ public class CartDetailDAO {
 		return sqlSession.insert("c.cart_insert", idx_map);
 	}
 	
+<<<<<<< Updated upstream
+=======
+	// 장바구니 전체 조회
+	public List<CartDetailVO> cart_select_list(int m_idx) {
+		return sqlSession.selectList("cd.cart_select_list", m_idx);
+	}
+>>>>>>> Stashed changes
 }

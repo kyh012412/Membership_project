@@ -23,7 +23,34 @@
 		</style>
 		<script>
 			function send_shopping_cart(f){
+<<<<<<< Updated upstream
 				f.submit();
+=======
+					
+				const i_name = f.i_name.value.trim();
+				const i_color = f.i_color.value.trim();
+				
+				const url = "shopping_cart_insert";
+				
+				const param = {
+					"i_name": encodeURIComponent(i_name),
+					"i_color": encodeURIComponent(i_color)
+				};
+					
+				sendRequest(url, param, return_page, "post");
+			} 
+			
+			function return_page(...args){
+				let res = args[0].param;
+
+				if(res == 'yes'){
+					if(confirm("상품이 추가되었습니다.\n장바구니로 이동하시겠습니까?")){
+						location.href='shopping_cart';	
+					} else{
+						return;
+					}	
+				} 
+>>>>>>> Stashed changes
 			}
 		</script>
 	</head>
