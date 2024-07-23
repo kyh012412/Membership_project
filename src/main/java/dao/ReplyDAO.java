@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import vo.BoardPMemberReplyViewVO;
-import vo.BoardVO;
 import vo.ReplyVO;
 
 public class ReplyDAO {

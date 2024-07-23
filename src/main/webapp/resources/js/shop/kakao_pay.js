@@ -28,7 +28,7 @@ function kakao() {
             buyer_tel: '${id.m_tel}',
             buyer_addr: '${id.m_addr1}',
             buyer_postcode: "01181"
-        }, function (rsp) {
+        }, function m (rsp) {
         	if('${membership}' == 1 ) {
         		if (rsp.success) {
 	                // 서버단에서 결제정보 조회를 위해 fetch로 imp_uid 전달하기
@@ -39,7 +39,6 @@ function kakao() {
 	                        'Content-Type': 'application/json;charset=UTF-8'
 	                    },
 	                    body: JSON.stringify({
-	                        
 	                        // 기타 필요한 데이터가 있으면 추가 전달
 	                    })
 	                })
@@ -123,6 +122,5 @@ function kakao() {
 	                location.href = "shop";
 	            }
         	}
-            
-        });
-    });
+        })
+    };

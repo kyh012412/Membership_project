@@ -15,25 +15,25 @@ async function send_request(url, param, callBack, method){
 		
 		url += param_string;
 		
-		url = url.slice(0, -1)
+		url = url.slice(0, -1);
 	}
 		
 	if(method === "GET"){
 		response = await fetch(url, {
 			method: method,
-			headers: {"Content-Type": "application/json"}
+			headers: {"Content-Type": "application/json"},
 		});
-	}else{
+	} else{
 		response = await fetch(url, {
 			method: method,
 			headers: {"Content-Type": "application/json"},
-			body: JSON.stringify(http_param)
+			body: JSON.stringify(http_param),
 		});
-	}
+	};
 	
 	if(response.ok === true && response.status === 200){
 		res = await response.json();
-	}
+	};
 	
-	callBack(res)
-}
+	callBack(res);
+};

@@ -18,8 +18,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dao.BoardDAO;
 import dao.ReplyDAO;
-import util.Path;
-import vo.BoardVO;
 import vo.PMemberVO;
 import vo.ReplyVO;
 

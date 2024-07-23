@@ -2,12 +2,12 @@ let check_update_addr = 0;
 let check_oninput_addr = 1;
 
 const order_item_list_obj = JSON.parse(sessionStorage.getItem("order_list"));
-
 const order_item_list = order_item_list_obj["items"];
 const totals = order_item_list_obj["final_amount"];
-const final_info = {
-    "total_count": {...totals},
-    "items": [{}]
+
+const final_info = () => {
+    {"total_count": {...totals}},
+    {"items": [{}]},
 };
 
 const order_item_list_div = document.getElementById("order_item_list_div");
